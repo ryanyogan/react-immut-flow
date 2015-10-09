@@ -14,7 +14,17 @@ describe('components/orders/order_row', () => {
     subject = renderShallow(<OrderRow order={order} />);
   });
 
-  it('works', () => {
-    expect(1).to.eql(1);
+  it('renders the columns', () => {
+    const tds = subject.props.children.filter((c) => c.type === 'td');
+    const tdsContent = tds.map((td) => td.props.children);
+    expect(tdsContent).to.eql([
+      'ASX13X',
+      'Bruce Wayne',
+      'Mar 9, 12:14pm',
+      'Blue Wool Shirt, Pearl White Shirt',
+      '$340.75',
+      'Authorized',
+      'Open'
+    ]);
   });
 });

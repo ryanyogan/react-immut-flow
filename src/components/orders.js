@@ -1,5 +1,7 @@
 import React from 'react';
 import PageHeader from './page_header';
+import OrdersTable from './orders/orders_table';
+import ORDERS_DATA from '../data/orders';
 
 export default class Orders extends React.Component {
   render() {
@@ -8,6 +10,8 @@ export default class Orders extends React.Component {
         <PageHeader>
           <h1>Orders</h1>
         </PageHeader>
+
+        <OrdersTable orders={ORDERS_DATA} />
       </div>
     );
   }

@@ -19000,6 +19000,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _main_header = require('./main_header');
+
+var _main_header2 = _interopRequireDefault(_main_header);
+
 var App = (function (_React$Component) {
   _inherits(App, _React$Component);
 
@@ -19013,9 +19017,9 @@ var App = (function (_React$Component) {
     key: 'render',
     value: function render() {
       return _react2['default'].createElement(
-        'h1',
-        null,
-        'Hello World'
+        'div',
+        { className: 'app' },
+        _react2['default'].createElement(_main_header2['default'], null)
       );
     }
   }]);
@@ -19026,7 +19030,124 @@ var App = (function (_React$Component) {
 exports['default'] = App;
 module.exports = exports['default'];
 
-},{"react":157}],159:[function(require,module,exports){
+},{"./main_header":159,"react":157}],159:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _main_nav = require('./main_nav');
+
+var _main_nav2 = _interopRequireDefault(_main_nav);
+
+var MainHeader = (function (_React$Component) {
+  _inherits(MainHeader, _React$Component);
+
+  function MainHeader() {
+    _classCallCheck(this, MainHeader);
+
+    _get(Object.getPrototypeOf(MainHeader.prototype), 'constructor', this).apply(this, arguments);
+  }
+
+  _createClass(MainHeader, [{
+    key: 'render',
+    value: function render() {
+      return _react2['default'].createElement(
+        'div',
+        { className: 'main-header' },
+        _react2['default'].createElement(
+          'div',
+          { className: 'logo' },
+          'Storekeeper'
+        ),
+        _react2['default'].createElement(_main_nav2['default'], null)
+      );
+    }
+  }]);
+
+  return MainHeader;
+})(_react2['default'].Component);
+
+exports['default'] = MainHeader;
+module.exports = exports['default'];
+
+},{"./main_nav":160,"react":157}],160:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var MainNav = (function (_React$Component) {
+  _inherits(MainNav, _React$Component);
+
+  function MainNav() {
+    _classCallCheck(this, MainNav);
+
+    _get(Object.getPrototypeOf(MainNav.prototype), 'constructor', this).apply(this, arguments);
+  }
+
+  _createClass(MainNav, [{
+    key: 'render',
+    value: function render() {
+      return _react2['default'].createElement(
+        'nav',
+        { className: 'main-nav' },
+        _react2['default'].createElement(
+          'a',
+          null,
+          'Dashboard'
+        ),
+        _react2['default'].createElement(
+          'a',
+          { className: 'current' },
+          'Orders'
+        ),
+        _react2['default'].createElement(
+          'a',
+          null,
+          'Catalog'
+        )
+      );
+    }
+  }]);
+
+  return MainNav;
+})(_react2['default'].Component);
+
+exports['default'] = MainNav;
+module.exports = exports['default'];
+
+},{"react":157}],161:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -19045,4 +19166,4 @@ var _componentsApp2 = _interopRequireDefault(_componentsApp);
 
 _reactDom2['default'].render(_react2['default'].createElement(_componentsApp2['default'], null), document.querySelector("#app"));
 
-},{"./components/app":158,"react":157,"react-dom":2}]},{},[159]);
+},{"./components/app":158,"react":157,"react-dom":2}]},{},[161]);

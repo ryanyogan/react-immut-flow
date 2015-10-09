@@ -18982,6 +18982,10 @@ module.exports = require('./lib/React');
 },{"./lib/React":26}],158:[function(require,module,exports){
 'use strict';
 
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -18995,10 +18999,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var App = (function (_React$Component) {
   _inherits(App, _React$Component);
@@ -19023,6 +19023,26 @@ var App = (function (_React$Component) {
   return App;
 })(_react2['default'].Component);
 
-_reactDom2['default'].render(_react2['default'].createElement(App, null), document.querySelector("#app"));
+exports['default'] = App;
+module.exports = exports['default'];
 
-},{"react":157,"react-dom":2}]},{},[158]);
+},{"react":157}],159:[function(require,module,exports){
+'use strict';
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _componentsApp = require('./components/app');
+
+var _componentsApp2 = _interopRequireDefault(_componentsApp);
+
+_reactDom2['default'].render(_react2['default'].createElement(_componentsApp2['default'], null), document.querySelector("#app"));
+
+},{"./components/app":158,"react":157,"react-dom":2}]},{},[159]);

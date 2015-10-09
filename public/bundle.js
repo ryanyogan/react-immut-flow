@@ -23070,18 +23070,44 @@ var _dataOrders = require('../data/orders');
 
 var _dataOrders2 = _interopRequireDefault(_dataOrders);
 
+var _libFormatters = require('../lib/formatters');
+
+var STATUSES = ['all', 'open', 'shipped'];
+
 var Orders = (function (_React$Component) {
   _inherits(Orders, _React$Component);
 
-  function Orders() {
+  function Orders(props) {
     _classCallCheck(this, Orders);
 
-    _get(Object.getPrototypeOf(Orders.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Orders.prototype), 'constructor', this).call(this, props);
+    this.state = { selectedStatus: 'all' };
   }
 
   _createClass(Orders, [{
     key: 'render',
     value: function render() {
+      var _this = this;
+
+      var selectedStatus = this.state.selectedStatus;
+
+      var statuses = STATUSES.map(function (status, i) {
+        var className = status === selectedStatus ? 'selected status' : 'status';
+
+        return _react2['default'].createElement(
+          'a',
+          { key: i, className: className, onClick: _this.handleStatusClick.bind(_this, status) },
+          (0, _libFormatters.toTitleCase)(status)
+        );
+      });
+
+      var orders = _dataOrders2['default'];
+      if (selectedStatus !== 'all') {
+        orders = _dataOrders2['default'].filter(function (order) {
+          return order.orderStatus === selectedStatus;
+        });
+      }
+
       return _react2['default'].createElement(
         'div',
         { className: 'orders' },
@@ -23092,10 +23118,20 @@ var Orders = (function (_React$Component) {
             'h1',
             null,
             'Orders'
+          ),
+          _react2['default'].createElement(
+            'nav',
+            { className: 'status-nav' },
+            statuses
           )
         ),
-        _react2['default'].createElement(_ordersOrders_table2['default'], { orders: _dataOrders2['default'] })
+        _react2['default'].createElement(_ordersOrders_table2['default'], { orders: orders })
       );
+    }
+  }, {
+    key: 'handleStatusClick',
+    value: function handleStatusClick(status) {
+      this.setState({ selectedStatus: status });
     }
   }]);
 
@@ -23105,7 +23141,7 @@ var Orders = (function (_React$Component) {
 exports['default'] = Orders;
 module.exports = exports['default'];
 
-},{"../data/orders":168,"./orders/orders_table":165,"./page_header":167,"react":159}],164:[function(require,module,exports){
+},{"../data/orders":168,"../lib/formatters":169,"./orders/orders_table":165,"./page_header":167,"react":159}],164:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

@@ -1,0 +1,11 @@
+{
+  "name": "mastering-react",
+  "version": "0.0.1",
+  "description": "Mastering React for fun",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}

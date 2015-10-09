@@ -1,7 +1,12 @@
 import React from 'react';
+import OrderRow from './order_row';
 
 export default class OrdersTable extends React.Component {
   render() {
+    const orders = this.props.orders.map((order, i) => {
+      return <OrderRow key={i} order={order} />;
+    });
+
     return (
       <table className='orders-table'>
         <thead>
@@ -16,6 +21,7 @@ export default class OrdersTable extends React.Component {
           </tr>
         </thead>
         <tbody>
+          {orders}
         </tbody>
       </table>
     );

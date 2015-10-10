@@ -16,6 +16,10 @@ describe('components/orders', () => {
 
   describe('#render', () => {
     describe('when selectedStatus is "all"', () => {
+      beforeEach(() => {
+        subject.setState({ selectedStatus: 'all' });
+      });
+      
       it('renders all orders', () => {
         const table = TestUtils.findRenderedComponentWithType(subject, OrdersTable);
         const statuses = table.props.orders.map((o) => o.orderStatus);

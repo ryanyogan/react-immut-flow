@@ -28671,6 +28671,11 @@ var OrdersActions = (function () {
       this.dispatch(status);
     }
   }, {
+    key: 'updateAmountFilter',
+    value: function updateAmountFilter(amount) {
+      this.dispatch(amount);
+    }
+  }, {
     key: 'fetchOrders',
     value: function fetchOrders() {
       this.dispatch([]);
@@ -28932,8 +28937,6 @@ var Orders = (function (_React$Component) {
 
     this.onChange = this.onChange.bind(this);
     this.state = _storesOrders_store2['default'].getState();
-
-    //this.state.selectedStatus = 'all';
   }
 
   _createClass(Orders, [{
@@ -29377,12 +29380,16 @@ var OrdersStore = (function () {
   function OrdersStore() {
     _classCallCheck(this, OrdersStore);
 
-    this.orders = [];
-    this.selectedStatus = 'all';
+    Object.assign(this, {
+      orders: [],
+      selectedStatus: 'all',
+      amountFilter: null
+    });
 
     this.bindListeners({
       handleUpdateOrders: _actionsOrders_actions2['default'].UPDATE_ORDERS,
       handleUpdateSelectedStatus: _actionsOrders_actions2['default'].UPDATE_SELECTED_STATUS,
+      handleUpdateAmountFilter: _actionsOrders_actions2['default'].UPDATE_AMOUNT_FILTER,
       handleFetchOrders: _actionsOrders_actions2['default'].FETCH_ORDERS
     });
   }
@@ -29390,7 +29397,16 @@ var OrdersStore = (function () {
   _createClass(OrdersStore, [{
     key: 'handleUpdateOrders',
     value: function handleUpdateOrders(orders) {
-      this.orders = orders;
+      Object.assign(this, {
+        orders: orders
+      });
+    }
+  }, {
+    key: 'handleUpdateAmountFilter',
+    value: function handleUpdateAmountFilter(amount) {
+      Object.assign(this, {
+        amountFilter: amount
+      });
     }
   }, {
     key: 'handleUpdateSelectedStatus',

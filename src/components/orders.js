@@ -13,8 +13,6 @@ export default class Orders extends React.Component {
 
     this.onChange = this.onChange.bind(this);
     this.state = OrdersStore.getState();
-
-    //this.state.selectedStatus = 'all';
   }
 
   componentDidMount() {

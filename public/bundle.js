@@ -28956,11 +28956,18 @@ var Orders = (function (_React$Component) {
       this.setState(state);
     }
   }, {
+    key: 'handleAmountFilterChange',
+    value: function handleAmountFilterChange(e) {
+      _actionsOrders_actions2['default'].updateAmountFilter(e.currentTarget.value.trim() || null);
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this = this;
 
-      var selectedStatus = this.state.selectedStatus;
+      var _state = this.state;
+      var selectedStatus = _state.selectedStatus;
+      var amountFilter = _state.amountFilter;
 
       var statuses = STATUSES.map(function (status, i) {
         var className = status === selectedStatus ? 'selected status' : 'status';
@@ -28979,6 +28986,12 @@ var Orders = (function (_React$Component) {
         });
       }
 
+      if (amountFilter) {
+        orders = orders.filter(function (o) {
+          return o.amount === parseFloat(amountFilter);
+        });
+      }
+
       return _react2['default'].createElement(
         'div',
         { className: 'orders' },
@@ -28994,6 +29007,15 @@ var Orders = (function (_React$Component) {
             'nav',
             { className: 'status-nav' },
             statuses
+          ),
+          _react2['default'].createElement(
+            'form',
+            { className: 'amount-filter' },
+            _react2['default'].createElement('input', {
+              type: 'text',
+              placeholder: 'Filter by amount',
+              value: amountFilter,
+              onChange: this.handleAmountFilterChange.bind(this) })
           )
         ),
         _react2['default'].createElement(_ordersOrders_table2['default'], { orders: orders })

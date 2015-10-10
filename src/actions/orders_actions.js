@@ -6,6 +6,10 @@ class OrdersActions {
     this.dispatch(orders);
   }
 
+  updateSelectedStatus(status) {
+    this.dispatch(status);
+  }
+  
   fetchOrders() {
     this.dispatch([]);
     OrdersFetcher.fetch()

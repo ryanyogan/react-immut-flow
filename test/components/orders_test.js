@@ -1,5 +1,6 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
+import sinon from 'sinon';
 import expect from 'expect.js';
 import Orders from '../../src/components/orders';
 import OrdersTable from '../../src/components/orders/orders_table';
@@ -19,7 +20,7 @@ describe('components/orders', () => {
       beforeEach(() => {
         subject.setState({ selectedStatus: 'all' });
       });
-      
+
       it('renders all orders', () => {
         const table = TestUtils.findRenderedComponentWithType(subject, OrdersTable);
         const statuses = table.props.orders.map((o) => o.orderStatus);
@@ -55,6 +56,14 @@ describe('components/orders', () => {
           'shipped'
         ]);
       });
+    });
+  });
+
+  describe('#handleStatusClick', () => {
+    it('calls setState with the new selectedStatus', () => {
+      sinon.spy(subject, 'setState');
+      subject.handleStatusClick('foo');
+      expect(subject.setState.calledWith({ selectedStatus: 'foo' }) ).to.be(true);
     });
   });
 

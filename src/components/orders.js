@@ -11,8 +11,9 @@ class TopCustomer extends React.Component {
   render() {
     const { topOrder } = this.props;
     if (!topOrder) return null;
-    const firstName = topOrder.customer.split(' ')[0];
-    return <div>Top customer: {firstName}</div>;
+
+    topOrder.set('customer', topOrder.get('customer').split(' '))[0];
+    return <div>Top customer: {topOrder.get('customer')}</div>;
   }
 }
 
@@ -65,7 +66,7 @@ export default class Orders extends React.Component {
       orders = orders.filter(o => o.amount === parseFloat(amountFilter));
     }
 
-    const topOrder = orders.length ? orders[0] : null;
+    const topOrder = orders.size ? orders.get(0) : null;
 
     return (
       <div className='orders'>

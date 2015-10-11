@@ -33943,12 +33943,13 @@ var TopCustomer = (function (_React$Component) {
       var topOrder = this.props.topOrder;
 
       if (!topOrder) return null;
-      var firstName = topOrder.customer.split(' ')[0];
+
+      topOrder.set('customer', topOrder.get('customer').split(' '))[0];
       return _react2['default'].createElement(
         'div',
         null,
         'Top customer: ',
-        firstName
+        topOrder.get('customer')
       );
     }
   }]);
@@ -34021,7 +34022,7 @@ var Orders = (function (_React$Component2) {
         });
       }
 
-      var topOrder = orders.length ? orders[0] : null;
+      var topOrder = orders.size ? orders.get(0) : null;
 
       return _react2['default'].createElement(
         'div',
@@ -34103,8 +34104,8 @@ var OrderRow = (function (_React$Component) {
     value: function render() {
       var order = this.props.order;
 
-      var products = order.products.map(function (p) {
-        return p.name;
+      var products = order.get('products').map(function (p) {
+        return p.get('name');
       }).join(', ');
 
       return _react2['default'].createElement(
@@ -34113,17 +34114,17 @@ var OrderRow = (function (_React$Component) {
         _react2['default'].createElement(
           'td',
           null,
-          order.reference
+          order.get('reference')
         ),
         _react2['default'].createElement(
           'td',
           null,
-          order.customer
+          order.get('customer')
         ),
         _react2['default'].createElement(
           'td',
           { className: 'sorted-by' },
-          (0, _libFormatters.toDateTime)(order.orderedAt)
+          (0, _libFormatters.toDateTime)(order.get('orderedAt'))
         ),
         _react2['default'].createElement(
           'td',
@@ -34133,17 +34134,17 @@ var OrderRow = (function (_React$Component) {
         _react2['default'].createElement(
           'td',
           { className: 'amount' },
-          (0, _libFormatters.toMoney)(order.amount)
+          (0, _libFormatters.toMoney)(order.get('amount'))
         ),
         _react2['default'].createElement(
           'td',
           { className: 'status' },
-          (0, _libFormatters.toTitleCase)(order.paymentStatus)
+          (0, _libFormatters.toTitleCase)(order.get('paymentStatus'))
         ),
         _react2['default'].createElement(
           'td',
           { className: 'status' },
-          (0, _libFormatters.toTitleCase)(order.orderStatus)
+          (0, _libFormatters.toTitleCase)(order.get('orderStatus'))
         )
       );
     }
@@ -34471,12 +34472,16 @@ var OrdersStore = (function () {
   }, {
     key: 'handleUpdateSelectedStatus',
     value: function handleUpdateSelectedStatus(status) {
-      this.selectedStatus = status;
+      Object.assign(this, {
+        selectedStatus: status
+      });
     }
   }, {
     key: 'handleFetchOrders',
     value: function handleFetchOrders() {
-      this.orders = [];
+      Object.assign(this, {
+        orders: []
+      });
     }
   }]);
 

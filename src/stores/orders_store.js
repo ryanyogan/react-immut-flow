@@ -30,12 +30,17 @@ class OrdersStore {
       amountFilter: amount
     });
   }
+
   handleUpdateSelectedStatus(status) {
-    this.selectedStatus = status;
+    Object.assign(this, {
+      selectedStatus: status
+    });
   }
 
   handleFetchOrders() {
-    this.orders = [];
+    Object.assign(this, {
+      orders: []
+    });
   }
 }
 

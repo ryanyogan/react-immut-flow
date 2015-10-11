@@ -33944,7 +33944,7 @@ var TopCustomer = (function (_React$Component) {
 
       if (!topOrder) return null;
 
-      topOrder.set('customer', topOrder.get('customer').split(' '))[0];
+      topOrder = topOrder.set('customer', topOrder.get('customer').split(' ')[0]);
       return _react2['default'].createElement(
         'div',
         null,
@@ -34012,13 +34012,13 @@ var Orders = (function (_React$Component2) {
       var orders = this.state.orders;
       if (selectedStatus !== 'all') {
         orders = orders.filter(function (order) {
-          return order.orderStatus === selectedStatus;
+          return order.get('orderStatus') === selectedStatus;
         });
       }
 
       if (amountFilter) {
         orders = orders.filter(function (o) {
-          return o.amount === parseFloat(amountFilter);
+          return o.get('amount') === parseFloat(amountFilter);
         });
       }
 

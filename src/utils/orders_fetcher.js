@@ -1,4 +1,5 @@
 import moment from 'moment';
+import { fromJS } from 'immutable';
 
 function parseOrders(rawOrders) {
   return rawOrders.map((order) => {
@@ -26,7 +27,8 @@ const OrdersFetcher = {
   fetch() {
     return fetch('/orders.json')
       .then(resp => resp.json())
-      .then(parseOrders);
+      .then(parseOrders)
+      .then((orders => fromJS(orders)));
   }
 };
 

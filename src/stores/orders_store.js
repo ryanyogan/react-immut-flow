@@ -1,10 +1,12 @@
 import alt from '../alt';
+import immutableUtil from 'alt/utils/ImmutableUtil';
+import { List } from 'immutable';
 import OrdersActions from '../actions/orders_actions';
 
 class OrdersStore {
   constructor() {
     Object.assign(this, {
-      orders: [],
+      orders: List(),
       selectedStatus: 'all',
       amountFilter: null
     });
@@ -37,4 +39,4 @@ class OrdersStore {
   }
 }
 
-export default alt.createStore(OrdersStore);
+export default alt.createStore(immutableUtil(OrdersStore));

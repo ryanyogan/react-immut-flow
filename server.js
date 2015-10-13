@@ -21,6 +21,10 @@ app.get('/orders.json', (req, res) => {
   res.sendFile(__dirname + '/data/orders.json');
 });
 
+// app.get('*', (req, res) => {
+//   res.sendFile(__dirname + '/public/index.html');
+// });
+
 if ('development' == app.get('env')) {
   app.use(errorHandler());
 }

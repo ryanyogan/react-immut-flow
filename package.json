@@ -18,6 +18,7 @@
     "errorhandler": "^1.4.2",
     "expect.js": "^0.3.1",
     "express": "^4.13.3",
+    "history": "^1.12.5",
     "http": "0.0.0",
     "immutable": "^3.7.5",
     "mocha": "^2.3.3",
@@ -28,6 +29,7 @@
     "react-addons-perf": "^0.14.0",
     "react-addons-test-utils": "^0.14.0",
     "react-dom": "^0.14.0",
+    "react-router": "^1.0.0-beta3",
     "serve-favicon": "^2.3.0",
     "watchify": "^3.4.0"
   },

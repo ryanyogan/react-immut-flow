@@ -36684,11 +36684,6 @@ var MainHeader = (function (_React$Component) {
         _react2['default'].createElement(_main_nav2['default'], null)
       );
     }
-  }, {
-    key: 'shouldComponentUpdate',
-    value: function shouldComponentUpdate() {
-      return false;
-    }
   }]);
 
   return MainHeader;
@@ -36718,6 +36713,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require('react-router');
+
 var MainNav = (function (_React$Component) {
   _inherits(MainNav, _React$Component);
 
@@ -36734,26 +36731,21 @@ var MainNav = (function (_React$Component) {
         'nav',
         { className: 'main-nav' },
         _react2['default'].createElement(
-          'a',
-          null,
+          _reactRouter.Link,
+          { to: '/dashboard' },
           'Dashboard'
         ),
         _react2['default'].createElement(
-          'a',
-          { className: 'current' },
+          _reactRouter.Link,
+          { to: '/orders' },
           'Orders'
         ),
         _react2['default'].createElement(
-          'a',
-          null,
+          _reactRouter.Link,
+          { to: '/catalog' },
           'Catalog'
         )
       );
-    }
-  }, {
-    key: 'shouldComponentUpdate',
-    value: function shouldComponentUpdate() {
-      return false;
     }
   }]);
 
@@ -36763,7 +36755,7 @@ var MainNav = (function (_React$Component) {
 exports['default'] = MainNav;
 module.exports = exports['default'];
 
-},{"react":392}],399:[function(require,module,exports){
+},{"react":392,"react-router":229}],399:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

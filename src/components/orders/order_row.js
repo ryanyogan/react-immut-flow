@@ -18,4 +18,8 @@ export default class OrderRow extends React.Component {
       </tr>
     );
   }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps !== this.props.order;
+  }
 }

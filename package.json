@@ -25,6 +25,7 @@
     "morgan": "^1.6.1",
     "numeral": "^1.5.3",
     "react": "^0.14.0",
+    "react-addons-perf": "^0.14.0",
     "react-addons-test-utils": "^0.14.0",
     "react-dom": "^0.14.0",
     "serve-favicon": "^2.3.0",

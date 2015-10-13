@@ -42,6 +42,10 @@ export default class Orders extends React.Component {
     OrdersActions.updateAmountFilter(e.currentTarget.value.trim() || null);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state !== nextState;
+  }
+
   render() {
     const { selectedStatus, amountFilter } = this.state;
 

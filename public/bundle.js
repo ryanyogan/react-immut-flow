@@ -58343,7 +58343,7 @@ var DashboardActions = (function () {
 exports['default'] = _alt2['default'].createActions(DashboardActions);
 module.exports = exports['default'];
 
-},{"../alt":397,"../utils/sales_stats_fetcher":415}],396:[function(require,module,exports){
+},{"../alt":397,"../utils/sales_stats_fetcher":417}],396:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -58398,7 +58398,7 @@ var OrdersActions = (function () {
 exports['default'] = _alt2['default'].createActions(OrdersActions);
 module.exports = exports['default'];
 
-},{"../alt":397,"../utils/orders_fetcher":414}],397:[function(require,module,exports){
+},{"../alt":397,"../utils/orders_fetcher":416}],397:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -58415,6 +58415,42 @@ exports['default'] = new _alt2['default']();
 module.exports = exports['default'];
 
 },{"alt":2}],398:[function(require,module,exports){
+'use strict';
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _reactRouter = require('react-router');
+
+var _reactRouterLibBrowserHistory = require('react-router/lib/BrowserHistory');
+
+var _routes = require('./routes');
+
+var _routes2 = _interopRequireDefault(_routes);
+
+var _reactAddonsPerf = require('react-addons-perf');
+
+var _reactAddonsPerf2 = _interopRequireDefault(_reactAddonsPerf);
+
+// Disable for production builds
+require('babel/polyfill');
+
+window.Perf = _reactAddonsPerf2['default']; // Perf.start(), Perf.stop() in console
+
+_reactDom2['default'].render(_react2['default'].createElement(
+  _reactRouter.Router,
+  { history: _reactRouterLibBrowserHistory.history },
+  _routes2['default']
+), document.getElementById('app'));
+
+},{"./routes":413,"babel/polyfill":201,"react":394,"react-addons-perf":208,"react-dom":209,"react-router":231,"react-router/lib/BrowserHistory":211}],399:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -58494,7 +58530,7 @@ var App = (function (_React$Component) {
 exports['default'] = App;
 module.exports = exports['default'];
 
-},{"./main_header":402,"./orders":404,"./page":407,"react":394}],399:[function(require,module,exports){
+},{"./main_header":403,"./orders":405,"./page":408,"react":394}],400:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -58583,7 +58619,7 @@ var SalesChartXAxis = (function (_React$Component) {
 exports['default'] = SalesChartXAxis;
 module.exports = exports['default'];
 
-},{"lodash":205,"moment":206,"react":394}],400:[function(require,module,exports){
+},{"lodash":205,"moment":206,"react":394}],401:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -58665,7 +58701,7 @@ var SalesChartYAxis = (function (_React$Component) {
 exports['default'] = SalesChartYAxis;
 module.exports = exports['default'];
 
-},{"numeral":207,"react":394}],401:[function(require,module,exports){
+},{"numeral":207,"react":394}],402:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -58747,7 +58783,7 @@ var Dashboard = (function (_React$Component) {
 exports['default'] = Dashboard;
 module.exports = exports['default'];
 
-},{"../actions/dashboard_actions":395,"../stores/dashboard_store":412,"./sales_chart":409,"react":394}],402:[function(require,module,exports){
+},{"../actions/dashboard_actions":395,"../stores/dashboard_store":414,"./sales_chart":410,"react":394}],403:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -58803,7 +58839,7 @@ var MainHeader = (function (_React$Component) {
 exports['default'] = MainHeader;
 module.exports = exports['default'];
 
-},{"./main_nav":403,"react":394}],403:[function(require,module,exports){
+},{"./main_nav":404,"react":394}],404:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -58866,7 +58902,7 @@ var MainNav = (function (_React$Component) {
 exports['default'] = MainNav;
 module.exports = exports['default'];
 
-},{"react":394,"react-router":231}],404:[function(require,module,exports){
+},{"react":394,"react-router":231}],405:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -59051,7 +59087,7 @@ var Orders = (function (_React$Component2) {
 exports['default'] = Orders;
 module.exports = exports['default'];
 
-},{"../actions/orders_actions":396,"../lib/formatters":410,"../stores/orders_store":413,"./orders/orders_table":406,"./page_header":408,"react":394}],405:[function(require,module,exports){
+},{"../actions/orders_actions":396,"../lib/formatters":412,"../stores/orders_store":415,"./orders/orders_table":407,"./page_header":409,"react":394}],406:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -59145,7 +59181,7 @@ var OrderRow = (function (_React$Component) {
 exports['default'] = OrderRow;
 module.exports = exports['default'];
 
-},{"../../lib/formatters":410,"react":394}],406:[function(require,module,exports){
+},{"../../lib/formatters":412,"react":394}],407:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -59247,7 +59283,7 @@ var OrdersTable = (function (_React$Component) {
 exports['default'] = OrdersTable;
 module.exports = exports['default'];
 
-},{"./order_row":405,"react":394}],407:[function(require,module,exports){
+},{"./order_row":406,"react":394}],408:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -59294,7 +59330,7 @@ var Page = (function (_React$Component) {
 exports['default'] = Page;
 module.exports = exports['default'];
 
-},{"react":394}],408:[function(require,module,exports){
+},{"react":394}],409:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -59341,7 +59377,7 @@ var PageHeader = (function (_React$Component) {
 exports['default'] = PageHeader;
 module.exports = exports['default'];
 
-},{"react":394}],409:[function(require,module,exports){
+},{"react":394}],410:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -59457,7 +59493,54 @@ var SalesChart = (function (_React$Component) {
 exports['default'] = SalesChart;
 module.exports = exports['default'];
 
-},{"./charts/sales_chart_x_axis":399,"./charts/sales_chart_y_axis":400,"d3":203,"immutable":204,"lodash":205,"react":394}],410:[function(require,module,exports){
+},{"./charts/sales_chart_x_axis":400,"./charts/sales_chart_y_axis":401,"d3":203,"immutable":204,"lodash":205,"react":394}],411:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var NotFound = (function (_React$Component) {
+  _inherits(NotFound, _React$Component);
+
+  function NotFound() {
+    _classCallCheck(this, NotFound);
+
+    _get(Object.getPrototypeOf(NotFound.prototype), 'constructor', this).apply(this, arguments);
+  }
+
+  _createClass(NotFound, [{
+    key: 'render',
+    value: function render() {
+      return _react2['default'].createElement(
+        'div',
+        null,
+        'Not Found'
+      );
+    }
+  }]);
+
+  return NotFound;
+})(_react2['default'].Component);
+
+exports['default'] = NotFound;
+module.exports = exports['default'];
+
+},{"react":394}],412:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -59494,8 +59577,12 @@ exports.toMoney = toMoney;
 exports.toDateTime = toDateTime;
 exports.toTitleCase = toTitleCase;
 
-},{"moment":206,"numeral":207}],411:[function(require,module,exports){
+},{"moment":206,"numeral":207}],413:[function(require,module,exports){
 'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -59503,20 +59590,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
 var _reactRouter = require('react-router');
-
-var _reactRouterLibBrowserHistory = require('react-router/lib/BrowserHistory');
-
-var _reactAddonsPerf = require('react-addons-perf');
-
-var _reactAddonsPerf2 = _interopRequireDefault(_reactAddonsPerf);
-
-// Disable for production builds
-// Perf.start(), Perf.stop() in console
 
 var _componentsApp = require('./components/app');
 
@@ -59530,22 +59604,22 @@ var _componentsOrders = require('./components/orders');
 
 var _componentsOrders2 = _interopRequireDefault(_componentsOrders);
 
-require('babel/polyfill');
+var _componentsSharedNot_found = require('./components/shared/not_found');
 
-window.Perf = _reactAddonsPerf2['default'];
+var _componentsSharedNot_found2 = _interopRequireDefault(_componentsSharedNot_found);
 
-_reactDom2['default'].render(_react2['default'].createElement(
-  _reactRouter.Router,
-  { history: _reactRouterLibBrowserHistory.history },
-  _react2['default'].createElement(
-    _reactRouter.Route,
-    { path: '/', component: _componentsApp2['default'] },
-    _react2['default'].createElement(_reactRouter.Route, { path: 'dashboard', component: _componentsDashboard2['default'] }),
-    _react2['default'].createElement(_reactRouter.Route, { path: 'orders', component: _componentsOrders2['default'] })
-  )
-), document.getElementById('app'));
+var routes = _react2['default'].createElement(
+  _reactRouter.Route,
+  { path: '/', component: _componentsApp2['default'] },
+  _react2['default'].createElement(_reactRouter.Route, { path: 'dashboard', component: _componentsDashboard2['default'] }),
+  _react2['default'].createElement(_reactRouter.Route, { path: 'orders', component: _componentsOrders2['default'] }),
+  _react2['default'].createElement(_reactRouter.Route, { path: '*', component: _componentsSharedNot_found2['default'] })
+);
 
-},{"./components/app":398,"./components/dashboard":401,"./components/orders":404,"babel/polyfill":201,"react":394,"react-addons-perf":208,"react-dom":209,"react-router":231,"react-router/lib/BrowserHistory":211}],412:[function(require,module,exports){
+exports['default'] = routes;
+module.exports = exports['default'];
+
+},{"./components/app":399,"./components/dashboard":402,"./components/orders":405,"./components/shared/not_found":411,"react":394,"react-router":231}],414:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -59602,7 +59676,7 @@ var DashboardStore = (function () {
 exports['default'] = _alt2['default'].createStore((0, _altUtilsImmutableUtil2['default'])(DashboardStore));
 module.exports = exports['default'];
 
-},{"../actions/dashboard_actions":395,"../alt":397,"alt/utils/ImmutableUtil":12,"immutable":204}],413:[function(require,module,exports){
+},{"../actions/dashboard_actions":395,"../alt":397,"alt/utils/ImmutableUtil":12,"immutable":204}],415:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -59683,7 +59757,7 @@ var OrdersStore = (function () {
 exports['default'] = _alt2['default'].createStore((0, _altUtilsImmutableUtil2['default'])(OrdersStore));
 module.exports = exports['default'];
 
-},{"../actions/orders_actions":396,"../alt":397,"alt/utils/ImmutableUtil":12,"immutable":204}],414:[function(require,module,exports){
+},{"../actions/orders_actions":396,"../alt":397,"alt/utils/ImmutableUtil":12,"immutable":204}],416:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -59735,7 +59809,7 @@ var OrdersFetcher = {
 exports['default'] = OrdersFetcher;
 module.exports = exports['default'];
 
-},{"immutable":204,"moment":206}],415:[function(require,module,exports){
+},{"immutable":204,"moment":206}],417:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -59769,4 +59843,4 @@ var SalesStatsFetcher = {
 exports['default'] = SalesStatsFetcher;
 module.exports = exports['default'];
 
-},{"immutable":204}]},{},[411]);
+},{"immutable":204}]},{},[398]);
